@@ -1,0 +1,22 @@
+{
+    "name": "pixart/addemar",
+    "type": "library",
+    "description": "PHP Library to easy talk to the Addemar API",
+    "keywords": ["Addemar", "Mailing"],
+    "homepage": "https://github.com/pix-art",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joeri Timmermans",
+            "email": "joeri@pix-art.be"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "autoload": {
+        "psr-0" : {
+            "Addemar" : "src/"
+        }
+    }
+}

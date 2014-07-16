@@ -6,3 +6,5 @@ Feel free to use my bundle it's a work in progres, shame on me i haven't written
 
 * Allows you to Create a contact
 * Allows you to Send a campaign to a contact
+
+More info: https://ws-email.addemar.com/docs/current/

@@ -1,14 +1,13 @@
 <?php
 
-namespace Addemar\Model;
-
+namespace Addemar\Configuration;
 
 class Settings
 {
 	private $token;
 	private $version = 1.4;
-	private $soapUrl = 'https://ws-email.addemar.com/soap/wsdl/';
-	private $clientId = false;
+	private $wsdl = 'https://ws-email.addemar.com/soap/wsdl/';
+	private $options = array();
 
 	public function __construct($token)
 	{
@@ -35,24 +34,25 @@ class Settings
 		return $this->version;
 	}
 
-	public function setSoapUrl($soapUrl)
+	public function setWsdl($wsdl)
 	{
-		$this->soapUrl = $soapUrl;
+		$this->wsdl = $wsdl;
 	}
 
-	public function getSoapUrl()
+	public function getWsdl()
 	{
-		return $this->soapUrl;
+		return $this->wsdl;
 	}
 
-	public function setClientId($clientId)
-	{
-		$this->clientId = $clientId;
-	}
+    public function getOptions()
+    {
+        return $this->options;
+    }
+ 
+    public function setOptions($options)
+    {
+        $this->options = $options;
 
-	public function getClientId()
-	{
-		return $this->clientId;
-	}
-
+        return $this;
+    }
 }

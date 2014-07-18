@@ -23,7 +23,7 @@ class ContactGroupsManagerTest extends BaseManagerTest
      */
     public function it_should_return_a_valid_group()
     {
-        $groups = $this->manager->getMailgroupId('knokke');
+        $groups = $this->manager->getMailgroupId('test');
         $this->assertTrue(is_array($groups));
         $this->assertTrue(isset($groups[0]));
     }

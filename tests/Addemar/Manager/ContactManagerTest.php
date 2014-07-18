@@ -67,10 +67,6 @@ class ContactManagerTest extends BaseManagerTest
         $structure = $this->manager->getStructure();
 
         $structure->fields[0]->value = 'info@example.com';
-        $structure->fields[1]->value = 'John';
-        $structure->fields[2]->value = 'Doe';
-        $structure->fields[3]->value = '04456456354';
-        $structure->fields[4]->value = 'nl';
 
         return $this->manager->create($structure);
     }
@@ -80,8 +76,8 @@ class ContactManagerTest extends BaseManagerTest
      */
     public function it_should_fetch_a_contact_id()
     {
-        $field_id = $this->manager->getFieldIdByName('email');
-        $contact_ids = $this->manager->getContactId(0,"info@example.com",$field_id);
+        $field_ids = $this->manager->getFieldIdByName('email');
+        $contact_ids = $this->manager->getContactId(0,"info@example.com",$field_ids[0]);
         $this->assertTrue(is_array($contact_ids));
         $this->assertTrue(in_array($this->testContact, $contact_ids));
     }
@@ -97,17 +93,18 @@ class ContactManagerTest extends BaseManagerTest
 
     /**
      * @test
+     * TODO
      */
     public function it_should_update_a_contact()
     {
         $structure = $this->manager->getContactData($this->testContact);
-        $structure->fields[1]->value = 'Firstname';
+        $structure->fields[0]->value = 'info@example.be';
         $this->manager->update($structure);
-        
+
         $newstructure = $this->manager->getContactData($this->testContact);
 
         $this->is_valid_structure($newstructure, $this->testContact);
-        $this->assertEquals($newstructure->fields[1]->value, 'Firstname');
+        $this->assertEquals($newstructure->fields[0]->value, 'info@example.be');
     }
 
     /**
@@ -116,9 +113,6 @@ class ContactManagerTest extends BaseManagerTest
     public function it_should_delete_a_contact()
     {
         $this->manager->delete($this->testContact);
-        $structure = $this->manager->getContactData($this->testContact);
-        $this->assertEquals($structure->fields[0]->value, '');
-        //set contact to false since we already deleted it
         $this->testContact = false;
     }
 

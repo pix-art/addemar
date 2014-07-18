@@ -1,4 +1,4 @@
-# PHP Library for Addemar API [![Build Status](https://travis-ci.org/pix-art/addemar.svg)](https://travis-ci.org/pix-art/addemar)
+#PHP API Wrapper for Addemar [![Build Status](https://travis-ci.org/pix-art/addemar.svg)](https://travis-ci.org/pix-art/addemar)
 
 Fully rewritten this old stuff. Is now unittested and contains 3 managers so far.
 

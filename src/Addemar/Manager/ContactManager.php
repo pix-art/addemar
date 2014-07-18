@@ -17,9 +17,9 @@ class ContactManager extends AbstractManager
         return $this->connection->getContactStructure();
     }
 
-    public function create($structure)
+    public function create($contact_data)
     {
-        return $this->connection->createContact($structure);
+        return $this->connection->createContact($contact_data);
     }
 
     public function getContactId($status, $filter, $search_field_id = 1)
@@ -32,13 +32,14 @@ class ContactManager extends AbstractManager
         return $this->connection->getContactData($cid);
     }
 
-    public function getFieldIdByName($name){
+    public function getFieldIdByName($name)
+    {
         return $this->connection->getFieldId($name);
     }
 
-    public function update($structure)
+    public function update($contact_data)
     {
-        return $this->connection->updateContact($structure);
+        return $this->connection->updateContact($contact_data);
     }
 
     public function delete($cid)
@@ -46,9 +47,9 @@ class ContactManager extends AbstractManager
         return $this->connection->removeContact($cid);
     }
 
-    public function subscribeContact($cid, $group)
+    public function subscribeContact($cid, $mgid)
     {
-        return $this->connection->subscribeContact($cid,$group);
+        return $this->connection->subscribeContact($cid,$mgid);
     }
 
 }

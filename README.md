@@ -33,8 +33,9 @@ Managers are just grouping names for functions of a specific catergory. Each man
 
 **Example**
 
+	use Addemar\Factory\ManagerFactory;
 	use Addemar\Client\Connection;
-	use Addemar\Client\Settings;
+	use Addemar\Configuration\Settings;
 	
 	$connection = new Connection(new Settings('Your Token'));
 	ManagerFactory::create($connection, 'Addemar\Manager\ContactGroupsManager');
